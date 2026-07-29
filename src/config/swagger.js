@@ -1,3 +1,4 @@
+const path = require('path');
 const swaggerJSDoc = require('swagger-jsdoc');
 
 const swaggerOptions = {
@@ -15,12 +16,16 @@ const swaggerOptions = {
     },
     servers: [
       {
+        url: 'https://cemzo-ecommerce-api.onrender.com',
+        description: 'Render Production Server'
+      },
+      {
         url: 'http://localhost:5000',
         description: 'Development Local Server'
       },
       {
-        url: 'https://cemzo-ecommerce-api.onrender.com',
-        description: 'Render Production Server'
+        url: '/',
+        description: 'Current Domain Server'
       }
     ],
     components: {
@@ -35,8 +40,8 @@ const swaggerOptions = {
     }
   },
   apis: [
-    './src/routes/v1/*.js',
-    './src/models/*.js'
+    path.join(__dirname, '../routes/v1/*.js'),
+    path.join(__dirname, '../models/*.js')
   ]
 };
 

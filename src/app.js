@@ -15,8 +15,8 @@ const { apiRateLimiter } = require('./middlewares/rateLimiter');
 
 const app = express();
 
-// Security HTTP headers
-app.use(helmet());
+// Security HTTP headers (disable CSP for Swagger UI compatibility)
+app.use(helmet({ contentSecurityPolicy: false }));
 
 // CORS configuration
 app.use(
@@ -65,8 +65,20 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Swagger API Documentation UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// Swagger API Documentation UI Options for Render / Production
+const swaggerUiOptions = {
+  customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.0/swagger-ui.min.css',
+  customJs: [
+    'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.0/swagger-ui-bundle.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.11.0/swagger-ui-standalone-preset.js'
+  ],
+  customCss: '.swagger-ui .topbar { display: none }',
+  swaggerOptions: {
+    persistAuthorization: true
+  }
+};
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, swaggerUiOptions));
 
 // API v1 Routes
 app.use('/api/v1', v1Router);
