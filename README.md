@@ -7,6 +7,10 @@
 
 A production-ready, high-performance RESTful API built with **Node.js**, **Express.js**, **MongoDB Atlas**, **Mongoose**, **JWT Authentication**, and **Joi Validation**.
 
+### 🌐 Live Deployment Links
+- 🚀 **Live API Service**: [https://cemzo-ecommerce-api.onrender.com/](https://cemzo-ecommerce-api.onrender.com/)
+- 📖 **Live Swagger UI Documentation**: [https://cemzo-ecommerce-api.onrender.com/api-docs](https://cemzo-ecommerce-api.onrender.com/api-docs)
+
 Designed following clean MVC / Layered architecture best practices, this API manages user authentication, product catalog inventory, atomic stock reservations, order processing with automated inventory deduction, and real-time inventory analytics.
 
 ---
@@ -145,9 +149,10 @@ npm test
 
 ## 📖 API Documentation & Swagger
 
-Interactive Swagger UI documentation is available out-of-the-box when running the application.
+Interactive Swagger UI documentation is available out-of-the-box both locally and on live deployment:
 
-Visit: **`http://localhost:5000/api-docs`**
+- **Live Render Swagger UI**: [https://cemzo-ecommerce-api.onrender.com/api-docs](https://cemzo-ecommerce-api.onrender.com/api-docs)
+- **Local Development**: `http://localhost:5000/api-docs`
 
 ### Key Endpoint Overview
 

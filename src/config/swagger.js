@@ -10,8 +10,8 @@ const swaggerOptions = {
       description:
         'Production-ready REST API for managing e-commerce inventory, stock reservations, order processing, and user authentication.',
       contact: {
-        name: 'Cemzo Engineering Team',
-        email: 'engineering@cemzo.com'
+        name: 'Ahshan Habib (Cemzo Engineering)',
+        email: 'aaaa.ahshanhabib@gmail.com'
       }
     },
     servers: [
